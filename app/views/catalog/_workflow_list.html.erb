@@ -1,18 +1,20 @@
 <div class="row dashboard-actions">
   <div class="col-xs-12">
-    {{@filter_form}}
     <fieldset class="form-group">
-      {{select_tag_for_processing_state}}
-      {{select_tag_for_sort_order}}
+      <%= select_tag %> {{select_tag_for_processing_state}}
+      <%= select_tag %> {{select_tag_for_sort_order}}
     </fieldset>
-    {{submit_button}}
-    {{/filter_form}}
+    <%= submit_tag("Filter") %>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 work-listing">
-    {{paginate_works}}
+  <div class="col-xs-12">
+    <% if show_pagination? and @response.total_pages > 1 %>
+        <div class="pagination">
+          <%= render 'results_pagination' %>
+        </div>
+    <% end %>
   </div>
 </div>
 
@@ -36,14 +38,18 @@
         <td>{{program_names_to_sentence}}</td>
         <td>{{work_type}}</td>
         <td>{{processing_state}}</td>
-        <td>{{date_created}}</td>
+        <td>{{date_updated}}</td>
       </tr>
     </table>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 work-listing">
-    {{paginate_works}}
+  <div class="col-xs-12">
+    <% if show_pagination? and @response.total_pages > 1 %>
+        <div class="pagination">
+          <%= render 'results_pagination' %>
+        </div>
+    <% end %>
   </div>
 </div>
