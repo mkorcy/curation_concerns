@@ -9,6 +9,7 @@
 //= require bootstrap/popover
 //= require bootstrap/tab
 //= require bootstrap/affix
+//= require advisor_actions_affix
 //
 //= require jquery-ui/sortable
 //= require clipboard
