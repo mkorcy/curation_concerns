@@ -1,0 +1,49 @@
+<div class="row dashboard-actions">
+  <div class="col-xs-12">
+    {{@filter_form}}
+    <fieldset class="form-group">
+      {{select_tag_for_processing_state}}
+      {{select_tag_for_sort_order}}
+    </fieldset>
+    {{submit_button}}
+    {{/filter_form}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 work-listing">
+    {{paginate_works}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Creator(s)</th>
+        <th>Program Name(s)</th>
+        <th>Type</th>
+        <th>Processing State</th>
+        <th>Date Updated</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="{{path}}">{{title}}</td>
+        <td>{{creator_names_to_sentence}}</td>
+        <td>{{program_names_to_sentence}}</td>
+        <td>{{work_type}}</td>
+        <td>{{processing_state}}</td>
+        <td>{{date_created}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 work-listing">
+    {{paginate_works}}
+  </div>
+</div>
